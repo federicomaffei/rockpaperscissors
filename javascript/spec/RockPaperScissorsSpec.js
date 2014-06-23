@@ -3,7 +3,7 @@ describe("Rock-Paper-Scissors", function() {
 
   beforeEach(function() {
     player1 = new Player('Alex');
-    player2 = new Player('Bob');
+    player2 = new Player('Tony');
     game = new Game(player1, player2);
   });
 
@@ -23,6 +23,14 @@ describe("Rock-Paper-Scissors", function() {
         player1.picks('rock');
         player2.picks('paper');
         expect(game.winner()).toBe(player2);
+
+      });
+
+      it('should lose to Spock', function() {
+
+        player1.picks('spock');
+        player2.picks('rock');
+        expect(game.winner()).toBe(player1);
 
       });
 
@@ -70,24 +78,43 @@ describe("Rock-Paper-Scissors", function() {
 
   });
 
-  describe('draws', function() {
+describe('draws', function() {
 
-    describe('any identical picks', function() {
+  describe('any identical picks', function() {
 
-      it('should result in no winner', function() {
+    it('should result in no winner', function() {
 
-        var drawGameResults = ['rock', 'paper', 'scissors'].map(function(x) {
-          player1.picks(x);
-          player2.picks(x);
-          return game.winner();
-        });
-
-        expect(drawGameResults).toEqual([null, null, null]);
-
+      var drawGameResults = ['rock', 'paper', 'scissors'].map(function(x) {
+        player1.picks(x);
+        player2.picks(x);
+        return game.winner();
       });
+
+      expect(drawGameResults).toEqual([null, null, null]);
 
     });
 
   });
+});
 
+describe('victory_message', function() {
+
+  it('should return a message if player one won', function() {
+
+    player1.picks('rock');
+    player2.picks('scissors');
+    expect(game.winner()).toBe(player1);
+    expect(game.victory_message(game)).toEqual("Alex's rock crushes Tony's scissors");
+
+  });
+
+  it('should return a message if player two won', function() {
+
+    player1.picks('scissors');
+    player2.picks('rock');
+    expect(game.winner()).toBe(player2);
+    expect(game.victory_message(game)).toEqual("Tony's rock crushes Alex's scissors");
+
+  });
+});
 });

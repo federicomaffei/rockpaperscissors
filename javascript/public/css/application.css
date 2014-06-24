@@ -9,8 +9,9 @@ body {
 	padding: 30px 0px;
 }
 
-#result {
+#results {
 	text-align: center;
+	list-style-type: none;
 }
 
 .game_image {

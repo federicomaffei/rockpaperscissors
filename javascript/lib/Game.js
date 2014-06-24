@@ -1,11 +1,3 @@
-function Player(name) {
-	this.name = name;
-};
-
-Player.prototype.picks = function(pick) {
-	this.pick = pick;
-};
-
 function Game(player1, player2) {
 	this.player1 = player1;
 	this.player2 = player2;
@@ -48,5 +40,11 @@ Game.prototype.victory_message = function(game) {
 		spock: {scissors: 'smashes', rock: 'vapourises'}
 	};
 
-	return game.winner().name + "'s " + game.winner().pick + " " + Verbs[game.winner().pick][game.loser().pick] + " " + game.loser().name + "'s " + game.loser().pick;
+	if(game.winner() === null) {
+		return 'Draw.'
+	}
+
+	else {
+		return game.winner().name + "'s " + game.winner().pick + " " + Verbs[game.winner().pick][game.loser().pick] + " " + game.loser().name + "'s " + game.loser().pick;
+	}
 };

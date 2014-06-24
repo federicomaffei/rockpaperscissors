@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ROCKPAPERSCISSORSLIZARDSPOCK</title>
+	<link rel="stylesheet" type="text/css" href="public/css/application.css">
+</head>
+<body>
+	<div id = 'title'>
+		.welcome to ROCKPAPERSCISSORSLIZARDSPOCK.
+	</div>
+	<div class = 'choices'>
+		<div class = 'game_image'>
+			<img src='public/images/lizard.png' data-pick='lizard'>
+		</div>
+		<div class = 'game_image'>
+			<img src='public/images/spock.png' data-pick='spock'>
+		</div>
+		<div class = 'game_image'>
+			<img src='public/images/rock.png' data-pick='rock'>
+		</div>
+		<div class = 'game_image'>
+			<img src='public/images/paper.png' data-pick='paper'>
+		</div>
+		<div class = 'game_image'>
+			<img src='public/images/scissors.png' data-pick='scissors'>
+		</div>
+	</div>
+	<h2 id='result'></h2>
+	<script src="./lib/player.js"></script>
+	<script src="./lib/game.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script> 
+		$(document).ready(function(){
+			var p1 = new Player('Johann');
+			var p2 = new Player('Federico');
+			var game = new Game(p1, p2);
+
+			$('.choices img').on('click', function(){
+				p1.picks($(this).data('pick'));
+				p2.picks('scissors');
+				
+				$('#result').text(game.victory_message(game));
+			});
+		});
+	</script>
+</body>
+</html>

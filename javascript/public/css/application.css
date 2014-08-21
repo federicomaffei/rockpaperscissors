@@ -12,6 +12,7 @@ body {
 #results {
 	text-align: center;
 	list-style-type: none;
+	padding: 20px 0px;
 }
 
 .game_image {

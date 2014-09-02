@@ -8,7 +8,7 @@ game = Game.new player1, player2
 player1.picks :rock and player2.picks :scissors
 
 if winner = game.winner
-  puts "The winner is #{winner.name}"
+	puts "The winner is #{winner.name}"
 else
-  puts 'DRAW!'
+	puts 'DRAW!'
 end

@@ -1,120 +1,98 @@
 describe("Rock-Paper-Scissors", function() {
-  var player1, player2, game;
+	var player1, player2, game;
 
-  beforeEach(function() {
-    player1 = new Player('Alex');
-    player2 = new Player('Tony');
-    game = new Game(player1, player2);
-  });
+	beforeEach(function() {
+		player1 = new Player('Alex');
+		player2 = new Player('Tony');
+		game = new Game(player1, player2);
+	});
 
-  describe('winning and losing', function() {
+	describe('winning and losing', function() {
+		describe('rock', function() {
+			it('should beat scissors', function() {
+				player1.picks('rock');
+				player2.picks('scissors');
+				expect(game.winner()).toBe(player1);
+			});
 
-    describe('rock', function() {
+			it('should lose to paper', function() {
 
-      it('should beat scissors', function() {
+				player1.picks('rock');
+				player2.picks('paper');
+				expect(game.winner()).toBe(player2);
 
-        player1.picks('rock');
-        player2.picks('scissors');
-        expect(game.winner()).toBe(player1);
-      });
+			});
 
-      it('should lose to paper', function() {
+			it('should lose to Spock', function() {
 
-        player1.picks('rock');
-        player2.picks('paper');
-        expect(game.winner()).toBe(player2);
+				player1.picks('spock');
+				player2.picks('rock');
+				expect(game.winner()).toBe(player1);
 
-      });
+			});
+		});
 
-      it('should lose to Spock', function() {
+		describe('paper', function() {
+			it('should beat rock', function() {
+				player1.picks('paper');
+				player2.picks('rock');
+				expect(game.winner()).toBe(player1);
+			});
 
-        player1.picks('spock');
-        player2.picks('rock');
-        expect(game.winner()).toBe(player1);
+			it('should lose to scissors', function() {
 
-      });
+				player1.picks('paper');
+				player2.picks('scissors');
+				expect(game.winner()).toBe(player2);
 
-    });
+			});
 
-    describe('paper', function() {
+		});
 
-      it('should beat rock', function() {
+		describe('scissors', function() {
+			it('should beat paper', function() {
 
-        player1.picks('paper');
-        player2.picks('rock');
-        expect(game.winner()).toBe(player1);
+				player1.picks('scissors');
+				player2.picks('paper');
+				expect(game.winner()).toBe(player1);
 
-      });
+			});
 
-      it('should lose to scissors', function() {
+			it('should lose to rock', function() {
 
-        player1.picks('paper');
-        player2.picks('scissors');
-        expect(game.winner()).toBe(player2);
-
-      });
-
-    });
-
-    describe('scissors', function() {
-
-      it('should beat paper', function() {
-
-        player1.picks('scissors');
-        player2.picks('paper');
-        expect(game.winner()).toBe(player1);
-
-      });
-
-      it('should lose to rock', function() {
-
-        player1.picks('scissors');
-        player2.picks('rock');
-        expect(game.winner()).toBe(player2);
-
-      });
-
-    });
-
-  });
+				player1.picks('scissors');
+				player2.picks('rock');
+				expect(game.winner()).toBe(player2);
+			});
+		});
+	});
 
 describe('draws', function() {
-
-  describe('any identical picks', function() {
-
-    it('should result in no winner', function() {
-
-      var drawGameResults = ['rock', 'paper', 'scissors'].map(function(x) {
-        player1.picks(x);
-        player2.picks(x);
-        return game.winner();
-      });
-
-      expect(drawGameResults).toEqual([null, null, null]);
-
-    });
-
-  });
+	describe('any identical picks', function() {
+		it('should result in no winner', function() {
+			var drawGameResults = ['rock', 'paper', 'scissors'].map(function(x) {
+				player1.picks(x);
+				player2.picks(x);
+				return game.winner();
+			});
+			expect(drawGameResults).toEqual([null, null, null]);
+		});
+	});
 });
 
-describe('victory_message', function() {
+describe('victory message', function() {
+	it('should return a message if player one won', function() {
+		player1.picks('rock');
+		player2.picks('scissors');
+		expect(game.winner()).toBe(player1);
+		expect(game.victory_message(game)).toEqual("Alex's rock crushes Tony's scissors");
+	});
 
-  it('should return a message if player one won', function() {
-
-    player1.picks('rock');
-    player2.picks('scissors');
-    expect(game.winner()).toBe(player1);
-    expect(game.victory_message(game)).toEqual("Alex's rock crushes Tony's scissors");
-
-  });
-
-  it('should return a message if player two won', function() {
-
-    player1.picks('scissors');
-    player2.picks('rock');
-    expect(game.winner()).toBe(player2);
-    expect(game.victory_message(game)).toEqual("Tony's rock crushes Alex's scissors");
-
-  });
+	it('should return a message if player two won', function() {
+		player1.picks('scissors');
+		player2.picks('rock');
+		expect(game.winner()).toBe(player2);
+		expect(game.victory_message(game)).toEqual("Tony's rock crushes Alex's scissors");
+	});
 });
 });

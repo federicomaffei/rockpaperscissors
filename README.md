@@ -18,6 +18,18 @@ The project has been developed through 4 versions:
 
 	4. Deploy to Heroku as a simple Sinatra application.
 
+====================
 
+The programming languages and technologies I used are:
+
+  * Javascript
+
+  * JQuery
+
+  * Jasmine
+
+  * Sinatra
+
+====================
 
 

@@ -32,6 +32,17 @@ The programming languages and technologies I used are:
 
 ====================
 
+How to run the application:
 
+  * In the browser enter: [http://ropasclisp.herokuapp.com/](http://ropasclisp.herokuapp.com/)
 
+How to test the application via Jasmine:
 
+  * From command line enter:
+```bash
+git clone https://github.com/federicomaffei/rockpaperscissors
+cd rockpaperscissors
+open SpecRunner.html
+```
+
+====================

@@ -28,7 +28,7 @@ Deploy to Heroku as a simple Sinatra application.
 
 ====================
 
-#The programming languages and technologies I used are:
+###The programming languages and technologies I used are:
 
   * Javascript
 
@@ -40,11 +40,11 @@ Deploy to Heroku as a simple Sinatra application.
 
 ====================
 
-How to run the application:
+###How to run the application:
 
   * In the browser enter: [http://ropasclisp.herokuapp.com/](http://ropasclisp.herokuapp.com/)
 
-How to test the application via Jasmine:
+###How to test the application via Jasmine:
 
   * From command line enter:
 ```bash

@@ -28,7 +28,7 @@ Deploy to Heroku as a simple Sinatra application.
 
 ====================
 
-The programming languages and technologies I used are:
+#The programming languages and technologies I used are:
 
   * Javascript
 

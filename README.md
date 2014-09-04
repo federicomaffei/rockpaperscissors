@@ -8,7 +8,7 @@ We created an interface to let two user play [RockPaperScissorsLizardSpock](http
 
 ====================
 
-The project has been developed through 4 versions:
+The project has been developed through 4 versions.
 
 ##Version 1:
 
@@ -52,5 +52,3 @@ git clone https://github.com/federicomaffei/rockpaperscissors
 cd rockpaperscissors
 open SpecRunner.html
 ```
-
-====================

@@ -10,13 +10,21 @@ We created an interface to let two user play [RockPaperScissorsLizardSpock](http
 
 The project has been developed through 4 versions:
 
-	1. Implementing the Rock-Paper-Scissors game logic in Javascript following the Ruby unit given to us, to make all of the Jasmine tests pass.
+##Version 1:
 
-	2. Adding two new options into the mix: Lizard and Spock, and creating custom winning messages that applied to any possible game result.
+Implementing the Rock-Paper-Scissors game logic in Javascript following the Ruby unit given to us, to make all of the Jasmine tests pass.
 
-	3. Build a simple game interface, using JQuery event handlers to handle player choices and return the messages.
+##Version 2:
 
-	4. Deploy to Heroku as a simple Sinatra application.
+Adding two new options into the mix: Lizard and Spock, and creating custom winning messages that applied to any possible game result.
+
+##Version 3:
+
+Build a simple game interface, using JQuery event handlers to handle player choices and return the messages.
+
+##Version 4:
+
+Deploy to Heroku as a simple Sinatra application.
 
 ====================
 

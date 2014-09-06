@@ -4,7 +4,7 @@ RockPaperScissorsLizardSpock
 RockPaperScissorsLizardSpock is the Week 7 project I worked on at [Makers Academy](http://www.makersacademy.com).
 We created an interface to let two user play [RockPaperScissorsLizardSpock](http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock), written in JavaScript, and tested with the [Jasmine](http://jasmine.github.io/) framework.
 
-![Rock-Paper-Scissors-Lizard-Spock](https://github.com/makersacademy/course/raw/master/images/rpsls.jpg)
+![Rock-Paper-Scissors-Lizard-Spock](https://dl.dropboxusercontent.com/u/9315601/rockpaper.png)
 
 ====================
 
